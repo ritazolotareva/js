@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Javascript</title>
+</head>
+<body>
+    <div class="inputes">
+        <label><input type="checkbox" id="one" onchange="fun1()">check me</label>
+        <input type="radio" name="r1" value="5"> 0
+        <input type="radio" name="r1" value="53"> 1
+        <input type="radio" name="r1" value="534"> 2
+        <button onclick="fun2()">checking what element is checked</button>
+    </div>
+    <div class="options">
+        <select name="selections" id="mySelect" onchange="fun3()">
+            <option value="">apple</option>
+            <option value="">watermelon</option>
+            <option value="">strawberry</option>
+            <option value="">lemon</option>
+        </select>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

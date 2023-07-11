@@ -91,4 +91,41 @@
 // console.log(x1 , x2)
 
 
-//
+//БЛОГ ПРО СТРОКИ, BOOLEAN, УСЛОВНЫЕ ОПЕРАТОРЫ
+
+//ЗАДАЧА 1. В переменную password запишите строку с любым произвольным паролем (четыре символа, один из которых — это дефис или нижнее подчёркивание)
+
+// let password = '1234-';
+
+// if ((password.includes('-' || "_")) && password.length >= 4) {
+//     console.log('Password is valid');
+// } else {
+//     console.log('Enter another password');
+// }
+
+
+
+
+//ЗАДАЧА 2. Узнать, как преобразовывать строку в верхний/нижний регистр и извлекать произвольные куски из строки.
+
+// let userName = 'Rita';
+// let userSurname = 'Margarita';
+
+// let updName = userName[0].toUpperCase() + userName.substring(1).toLowerCase();
+// let updSurname = userSurname[0].toUpperCase() + userSurname.substring(1).toLowerCase();
+
+// let result = userName === updName && userSurname === updSurname ? 'Имя осталось без изменений' : 'Имя было преобразовано'
+
+// console.log(result)
+// console.log(updName,updSurname)
+
+
+
+//ЗАДАЧИ 3. Проверить числа на чётность.
+
+// let number = 4;
+
+// let result = number%2 > 0 ? 'Число нечётное' : 'Число чётное';
+
+// console.log(result);
+

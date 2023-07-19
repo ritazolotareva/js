@@ -182,7 +182,7 @@
 // }
 
 
-//ЗАДАЧА 1. Напишите генератор массивов длиной count со случайными числами от n до m. 
+//ЗАДАЧА 1 Напишите генератор массивов длиной count со случайными числами от n до m. 
 
 // let array = [];
 
@@ -199,13 +199,55 @@
 
 
 
-//ЗАДАЧА 2. С помощью цикла создать перевёрнутый вариант произвольной строки.
+//ЗАДАЧА 0.2 С помощью цикла создать перевёрнутый вариант произвольной строки.
 
-let string = '123456789';
-let reverseString = '';
+// let string = '123456789';
+// let reverseString = '';
 
-for(let i = string.length - 1; i >= 0; --i) {
-    reverseString += string[i];
+// for(let i = string.length - 1; i >= 0; --i) {
+//     reverseString += string[i];
+// }
+
+// console.log(reverseString);
+
+//ЗАДАЧА 2. Перемешать массив чисел
+// let array = [];
+// let count = 5;
+
+// for(let i = 1; i <= count; ++i) {
+//     array.push(i);
+// }
+
+// for (let i = 0; i < array.length; ++i) {
+//         let j = Math.floor(Math.random()*array.length);
+//         let temp = array[i];
+//         array[i] = array[j];
+//         array[j] = temp;
+//     }
+// console.log(array);
+
+// ЗАДАЧА 3. Найти индекс (порядковый номер) нужного элемента в массиве.
+// let numbers = [1, 345, 38, 98, 123, 2, 34, 5];
+// let n = 0;
+// let found = false;
+
+// for (let i = 0; i < numbers.length; ++i) {
+//     if (n === numbers[i]) {
+//         found = true;
+//         console.log(`Значение "${n}" найдено. Его порядковый номер ${i+1}`);
+//         break;
+//     }
+// }
+// if(!found) {
+//     console.log(`Значение "${n}" в списке нет.`)
+// }
+
+//ЗАДАЧА 4. Обработать массивы одним циклом.
+let arr1 = [2, 2, 17, 21, 45, 12, 54, 31, 53];
+let arr2 = [12, 44, 23, 5, 2, 2, 17, 21, 45, 12, 54, 31, 53, 2, 2, 17, 21, 45, 12, 54, 31, 53, 2, 2, 17, 21, 45, 12, 54, 31, 53];
+
+for(let i = 0; i < arr2.length; ++i) {
+    arr1.push(arr2[i]);
 }
 
-console.log(reverseString);
+console.log(arr1);

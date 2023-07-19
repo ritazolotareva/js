@@ -134,8 +134,7 @@
 // БЛОК ПРО МАССИВЫ И ЦИКЛЫ
 
 //PRACTICE 
-
-//TASK 0. рассчет чискл фибоначи
+//TASK 0.1 рассчет чискл фибоначи
 
 // let fibo = [1,1];
 
@@ -145,7 +144,7 @@
 
 // console.log(fibo)
 
-//TASK 0. for of
+//TASK 0.2 for of
 
 // let  fruits = ['apple','watermellow','mango','pear'];
 
@@ -153,8 +152,7 @@
 //     console.log(fruit);
 // }
 
-
-//TASK 0. tossing arrays
+//TASK 0.3 tossing arrays
 
 // let arr = [1,2,3,4,5,6,7,8,9,10];
 // for (let i=0;i<arr.length;++i) {
@@ -166,7 +164,7 @@
 
 // console.log(arr);
 
-//TASK 0. ПОИСК В МАССИВЕ
+//TASK 0.4 ПОИСК В МАССИВЕ
 
 // let names = ['Аня','Саша','Ян','Никита','Вика','Олег'];
 // let found = false;
@@ -179,7 +177,6 @@
 //         break;
 //     }
 // }
-
 // if(!found) {
 //     console.log(`В списке нет имени "${seekName}"`);
 // }
@@ -204,9 +201,11 @@
 
 //ЗАДАЧА 2. С помощью цикла создать перевёрнутый вариант произвольной строки.
 
-// let string = '123456789';
-// let reverse = '';
+let string = '123456789';
+let reverseString = '';
 
-// for (let i = 0; i < 0; ++i) {
-    
-// }
+for(let i = string.length - 1; i >= 0; --i) {
+    reverseString += string[i];
+}
+
+console.log(reverseString);

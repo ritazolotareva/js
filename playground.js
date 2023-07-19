@@ -91,7 +91,7 @@
 // console.log(x1 , x2)
 
 
-//БЛОГ ПРО СТРОКИ, BOOLEAN, УСЛОВНЫЕ ОПЕРАТОРЫ
+//БЛОК ПРО СТРОКИ, BOOLEAN, УСЛОВНЫЕ ОПЕРАТОРЫ
 
 //ЗАДАЧА 1. В переменную password запишите строку с любым произвольным паролем (четыре символа, один из которых — это дефис или нижнее подчёркивание)
 
@@ -129,3 +129,84 @@
 
 // console.log(result);
 
+
+
+// БЛОК ПРО МАССИВЫ И ЦИКЛЫ
+
+//PRACTICE 
+
+//TASK 0. рассчет чискл фибоначи
+
+// let fibo = [1,1];
+
+// for (let i = 1; i < 49; ++i) {
+//     fibo.push(fibo[i]+fibo[i - 1]);
+// }
+
+// console.log(fibo)
+
+//TASK 0. for of
+
+// let  fruits = ['apple','watermellow','mango','pear'];
+
+// for (let fruit of fruits) {
+//     console.log(fruit);
+// }
+
+
+//TASK 0. tossing arrays
+
+// let arr = [1,2,3,4,5,6,7,8,9,10];
+// for (let i=0;i<arr.length;++i) {
+//     let j = Math.floor(Math.random()*arr.length);
+//     let temp = arr[i];
+//     arr[i] = arr[j];
+//     arr[j] = temp;
+// }
+
+// console.log(arr);
+
+//TASK 0. ПОИСК В МАССИВЕ
+
+// let names = ['Аня','Саша','Ян','Никита','Вика','Олег'];
+// let found = false;
+// let seekName = 'Марат'
+
+// for(let i = 0; i < names.length; ++i) {
+//     if(names[i] === seekName) {
+//         found = true;
+//         console.log(`В списке найдено имя "${names[i]}"`)
+//         break;
+//     }
+// }
+
+// if(!found) {
+//     console.log(`В списке нет имени "${seekName}"`);
+// }
+
+
+//ЗАДАЧА 1. Напишите генератор массивов длиной count со случайными числами от n до m. 
+
+// let array = [];
+
+// let n = 2;
+// let m = 45;
+// let count = 10;
+// let min = Math.min(m,n);
+
+// for (let i = 0; i < count; ++i) {
+//     array.push(Math.floor(Math.random() * (m - n) + min)); 
+// }
+
+// console.log(array)
+
+
+
+//ЗАДАЧА 2. С помощью цикла создать перевёрнутый вариант произвольной строки.
+
+// let string = '123456789';
+// let reverse = '';
+
+// for (let i = 0; i < 0; ++i) {
+    
+// }

@@ -71,5 +71,22 @@
 
 
 //BLOCK OF OBJECTS
-//TASK 0.
+// let mom = {
+//     age: 34,
+//     socket: true
+// }
 
+// let dad = {
+//     socket: false
+// }
+
+// let obj = {
+//     ...mom,
+//     ...dad
+// }
+// console.log(mom.socket);
+
+//ПРОВЕРКА  ДЕСТРУКТИРИЗАЦИИ
+// let [a, b, c] = ["abприветмир", 'ghbdtn', 'hi there'];
+// let [one, two, three] = new Set([1, 2, 3]);
+// console.log(c)

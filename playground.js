@@ -46,12 +46,30 @@
 
 
 // BLOCK OF FUNCTIONS & RETURN
-// TASK 1. ageCheck
-// function getAge(year) {
-//   let currentDate = new Date();
-//   let currentYear = currentDate.getFullYear();
-//   let age = currentYear - year;
-//   return age
+
+// SCOPE - ОБЛАСТЬ ВИДИМОСТИ
+// for (let i = 0; i < 10; i++) {
+// 	setTimeout(() => {
+// 		console.log(i)}, i * 1000);
 // }
 
-// console.log(getAge(1999))
+// TASK 3. SORTING
+// function arrSort(array) {
+//     for (let i = 0; i < array.length; ++i) {
+//         for (j = 0; j < array.length - 1; ++j) {
+//             if (array[j] > array[j+1]) {
+//                 let temp = array[j];
+//                 array[j] = array [j+1];
+//                 array[j+1] = temp;
+//             }
+//         }
+//     }
+//     return array
+// }
+
+// console.log(arrSort([12,33,3,44,100]))
+
+
+//BLOCK OF OBJECTS
+//TASK 0.
+

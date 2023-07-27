@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+// document.addEventListener('DOMContentLoaded', function() {
     let countDisplay = document.querySelector('.count-display');
     let incrementButton = document.querySelector('.increment-button');
 
@@ -8,4 +8,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     incrementButton.addEventListener('click', incrementCount)
-});
+// });

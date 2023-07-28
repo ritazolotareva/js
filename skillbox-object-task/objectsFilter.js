@@ -11,11 +11,11 @@ const usersList = [
 function filter(arr, propName, value) {
     let filterdList = [];
     for (let obj of arr) {
-        if (arr[propName] === value) {
-            filterdList.push(obj)
+        if (obj[propName] === value) {
+            filterdList.push(obj);
         }
     }
     return filterdList
 }
 
-console.log(filter(usersList, 'name', 'Иван'));
+console.log(filter(usersList, 'name', 'Пётр'));

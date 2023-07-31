@@ -4,6 +4,8 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
+
     
         {
             "name": "Road Mines",
@@ -14,6 +16,12 @@
         {
             "name": "objectsFilter",
             "program": "${workspaceFolder}/skillbox-object-task/objectsFilter.js",
+            "request": "launch", 
+            "type": "node"
+        },
+        {
+            "name": "task-4",
+            "program": "${workspaceFolder}/dom/skillbox-tasks/task-4.js",
             "request": "launch", 
             "type": "node"
         }

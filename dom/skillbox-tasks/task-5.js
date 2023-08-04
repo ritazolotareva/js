@@ -8,7 +8,7 @@ function timer() {
         display.textContent = input.value;
         counter = setInterval(count, 1000);
     } else {
-        alert('Неправельно введено число')
+        alert('Неправильно введено число');
     }
 }
 

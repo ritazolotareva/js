@@ -1,4 +1,4 @@
-(function() {
+(function () {
     function createAppTitle(title) {
         let appTitle = document.createElement('h2');
         appTitle.innerHTML = title;
@@ -56,37 +56,39 @@
         }
     }
 
-    let container = document.getElementById('todo-app');
-
-    let todoAppTitle = createAppTitle('To Do List');
-    let todoItemForm = createTodoItemForm();
-    let todoList = createTodoList();
-    // let todoItems = [createTodoItem('clean the bedroom'), createTodoItem('buy bread')];
-
-    container.append(todoAppTitle);
-    container.append(todoItemForm.form);
-    container.append(todoList);
-    // todoList.append(todoItems[0].item);
-    // todoList.append(todoItems[1].item);
-
-    todoItemForm.form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        if(!todoItemForm.input.value) {
-            return;
-        }
-
-        let todoItem = createTodoItem(todoItemForm.input.value);
-        todoItem.doneButton.addEventListener('click', function() {
-            todoItem.item.classList.toggle('list-group-item-success');
-        });
-        todoItem.deleteButton.addEventListener('click', function() {
-            if(confirm('Are you sure?')) {
-                todoItem.item.remove();
+    function createTodoApp(container, title = 'To Do List') {
+        let todoAppTitle = createAppTitle(title);
+        let todoItemForm = createTodoItemForm();
+        let todoList = createTodoList();
+    
+        container.append(todoAppTitle);
+        container.append(todoItemForm.form);
+        container.append(todoList);
+    
+        todoItemForm.form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!todoItemForm.input.value) {
+                return;
             }
-        })
-
-        todoList.append(todoItem.item);
-        todoItemForm.input.value = '';
+    
+            let todoItem = createTodoItem(todoItemForm.input.value);
+            todoItem.doneButton.addEventListener('click', function () {
+                todoItem.item.classList.toggle('list-group-item-success');
+            });
+            todoItem.deleteButton.addEventListener('click', function () {
+                if (confirm('Are you sure?')) {
+                    todoItem.item.remove();
+                }
+            })
+    
+            todoList.append(todoItem.item);
+            todoItemForm.input.value = '';
+        });
     }
-    );
+        
+    document.addEventListener('DOMContentLoaded', function(){
+        createTodoApp(document.getElementById('my-todo-app'), 'MY TO DO LIST')
+        createTodoApp(document.getElementById('mom-todo-app'), `MOM'S TO DO LIST`)
+        createTodoApp(document.getElementById('dad-todo-app'), `DAD'S TO DO LIST`)
+    })
 })();

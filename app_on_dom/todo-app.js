@@ -1,3 +1,5 @@
+    let tasksList = [];
+    
     function createAppTitle(title) {
         let appTitle = document.createElement('h2');
         appTitle.innerHTML = title;
@@ -41,25 +43,27 @@
         return list;
     }
 
-    function createTodoItem(name) {
+    function createTodoItem(obj) {
         let item = document.createElement('li');
         let buttonGroup = document.createElement('div')
         let doneButton = document.createElement('button')
         let deleteButton = document.createElement('button')
 
         item.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-center');
-        item.textContent = name;
+        item.textContent = obj.name;
         buttonGroup.classList.add('btn-group', 'btn-group-sm');
         doneButton.classList.add('btn', 'btn-success');
         doneButton.textContent = 'Done';
         deleteButton.classList.add('btn', 'btn-danger');
         deleteButton.textContent = 'Delete';
+        
+        if (obj.done == true) item.classList.add('list-group-item-success');
 
         buttonGroup.append(doneButton);
         buttonGroup.append(deleteButton);
         item.append(buttonGroup);
         
-        saveToLocalStorage(name);
+        saveToLocalStorage(obj.name);
 
         return {
             item, doneButton, deleteButton,
@@ -81,7 +85,12 @@
                 return;
             }
     
-            let todoItem = createTodoItem(todoItemForm.input.value);
+            let newItem = {
+                name: todoItemForm.input.value,
+                done: false,
+            }
+
+            let todoItem = createTodoItem(newItem);
             todoItem.doneButton.addEventListener('click', function () {
                 todoItem.item.classList.toggle('list-group-item-success');
             });
@@ -90,7 +99,10 @@
                     todoItem.item.remove();
                 }
             })
-            
+
+            tasksList.push(newItem);
+            console.log(tasksList);
+
             todoList.append(todoItem.item);
             todoItemForm.button.disabled = true;
             todoItemForm.input.value = '';

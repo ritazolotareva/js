@@ -1,4 +1,5 @@
-(function () {
+    let tasks = []; 
+
     function createAppTitle(title) {
         let appTitle = document.createElement('h2');
         appTitle.innerHTML = title;
@@ -74,10 +75,12 @@
             let todoItem = createTodoItem(todoItemForm.input.value);
             todoItem.doneButton.addEventListener('click', function () {
                 todoItem.item.classList.toggle('list-group-item-success');
+                saveToLocalStorage();
             });
             todoItem.deleteButton.addEventListener('click', function () {
                 if (confirm('Are you sure?')) {
                     todoItem.item.remove();
+                    saveToLocalStorage();
                 }
             })
     
@@ -85,10 +88,9 @@
             todoItemForm.input.value = '';
         });
     }
-        
-    document.addEventListener('DOMContentLoaded', function(){
-        createTodoApp(document.getElementById('my-todo-app'), 'MY TO DO LIST')
-        createTodoApp(document.getElementById('mom-todo-app'), `MOM'S TO DO LIST`)
-        createTodoApp(document.getElementById('dad-todo-app'), `DAD'S TO DO LIST`)
-    })
-})();
+
+    function savetoLocalStorage() {
+        localStorage.setItem('tasks', )
+    }
+    
+    window.createTodoApp = createTodoApp;

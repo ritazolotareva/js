@@ -52,6 +52,8 @@
         buttonGroup.append(deleteButton);
         item.append(buttonGroup);
 
+        setDataToLS(item);
+
         return {
             item, doneButton, deleteButton
         }
@@ -75,12 +77,11 @@
             let todoItem = createTodoItem(todoItemForm.input.value);
             todoItem.doneButton.addEventListener('click', function () {
                 todoItem.item.classList.toggle('list-group-item-success');
-                saveToLocalStorage();
             });
             todoItem.deleteButton.addEventListener('click', function () {
                 if (confirm('Are you sure?')) {
                     todoItem.item.remove();
-                    saveToLocalStorage();
+                    // removeFromList(todoItem);/
                 }
             })
     
@@ -89,8 +90,41 @@
         });
     }
 
-    function savetoLocalStorage() {
-        localStorage.setItem('tasks', )
+    function dataToJson(data) {
+        return JSON.stringify(data);
     }
+
+    function jsonToData(data) {
+        return JSON.parse(data);
+    }
+
+    function getListItem() {
+        return localStorage.getItem('listData');
+    }
+
+    function setListItem(data) {
+        localStorage.setItem('listData', data);
+    }
+
+    function setDataToLS(item) {
+        let data = localStorage.getItem('listData');
+
+        data = data ? JSON.parse(data) : [];
+        data.push(item);
+        setListItem(dataToJson(data));
+    }
+
+    function removeFromList(id) {
+        let data = jsonToData(getListItem());
+        let newList = [];
+        for (let i = 0; i < data.length; ++i) {
+            if (data[i].id !== id) {
+                newList.push(data[i])
+            }
+        }
+        setListItem(dataToJson(newList));
+    }
+        
+    
     
     window.createTodoApp = createTodoApp;

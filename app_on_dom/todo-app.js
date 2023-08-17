@@ -1,5 +1,3 @@
-    let tasks = []; 
-
     function createAppTitle(title) {
         let appTitle = document.createElement('h2');
         appTitle.innerHTML = title;
@@ -18,10 +16,19 @@
         buttonWrapper.classList.add('input-group-append');
         button.classList.add('btn', 'btn-primary');
         button.textContent = 'Add item';
+        button.disabled = true;
 
         buttonWrapper.append(button);
         form.append(input);
         form.append(buttonWrapper);
+
+        input.addEventListener('input', function() {
+            if (input.value !== '') {
+                button.disabled = false;
+            } else {
+                button.disabled = true;
+            }
+        })
 
         return {
             form, input, button
@@ -51,11 +58,11 @@
         buttonGroup.append(doneButton);
         buttonGroup.append(deleteButton);
         item.append(buttonGroup);
-
-        setDataToLS(item);
+        
+        saveToLocalStorage(name);
 
         return {
-            item, doneButton, deleteButton
+            item, doneButton, deleteButton,
         }
     }
 
@@ -81,50 +88,24 @@
             todoItem.deleteButton.addEventListener('click', function () {
                 if (confirm('Are you sure?')) {
                     todoItem.item.remove();
-                    // removeFromList(todoItem);/
                 }
             })
-    
+            
             todoList.append(todoItem.item);
+            todoItemForm.button.disabled = true;
             todoItemForm.input.value = '';
         });
     }
 
-    function dataToJson(data) {
-        return JSON.stringify(data);
+    function saveToLocalStorage(data) {
+        JSON.stringify(data);
+        localStorage.setItem('dataList', data)
     }
 
-    function jsonToData(data) {
-        return JSON.parse(data);
+    function renderFromLocalStorage(data) {
+        let list = localStorage.getItem('dataList');
+        JSON.parse(list);
     }
-
-    function getListItem() {
-        return localStorage.getItem('listData');
-    }
-
-    function setListItem(data) {
-        localStorage.setItem('listData', data);
-    }
-
-    function setDataToLS(item) {
-        let data = localStorage.getItem('listData');
-
-        data = data ? JSON.parse(data) : [];
-        data.push(item);
-        setListItem(dataToJson(data));
-    }
-
-    function removeFromList(id) {
-        let data = jsonToData(getListItem());
-        let newList = [];
-        for (let i = 0; i < data.length; ++i) {
-            if (data[i].id !== id) {
-                newList.push(data[i])
-            }
-        }
-        setListItem(dataToJson(newList));
-    }
-        
     
     
     window.createTodoApp = createTodoApp;
